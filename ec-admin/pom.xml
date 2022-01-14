@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-
     <artifactId>ec-admin</artifactId>
     <packaging>jar</packaging>
 
@@ -31,25 +30,26 @@
             <artifactId>ec-security</artifactId>
         </dependency>
 
-        <!--oss 找尋替代此方案-->
+        <!--阿里雲 OSS 找尋替代此方案-->
 
         <dependency>
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
-            <!--
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!-- 1
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
             </plugin>
-            -->
+            1-->
         </plugins>
     </build>
 </project>
