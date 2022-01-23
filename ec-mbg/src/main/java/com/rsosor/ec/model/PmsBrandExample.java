@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PmsBrandExample {
-
     protected String orderByClause;
 
     protected boolean distinct;
@@ -15,20 +14,20 @@ public class PmsBrandExample {
         oredCriteria = new ArrayList<>();
     }
 
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
-    public boolean isDistinct() {
-        return distinct;
+    public String getOrderByClause() {
+        return orderByClause;
     }
 
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
+    }
+
+    public boolean isDistinct() {
+        return distinct;
     }
 
     public List<Criteria> getOredCriteria() {

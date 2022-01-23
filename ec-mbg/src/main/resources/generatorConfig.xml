@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator.properties"/>
+    <context id="MysqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 為模型生成序列化方法 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 為生成的 Java 模型創建一個 toString 方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!-- 生成 mapper.xml 時覆蓋原文件 -->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>
+        <commentGenerator type="com.rsosor.ec.CommentGenerator">
+            <!-- 是否去除自動生成的注釋 true:是　：　false:否 -->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.connectionURL}"
+                        userId="${jdbc.userId}"
+                        password="${jdbc.password}">
+            <!-- 解決 mysql 驅動升級到 8.0 後不生成指定數據庫程式的問題 -->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <!-- 生成實體類 entity(JPA)、model、pojo 包命名習慣 -->
+        <javaModelGenerator targetPackage="com.rsosor.ec.model" targetProject="ec-mbg\src\main\java"/>
+        <!-- 生成 mapper(proxy) | dao(原始) 實現方式 -->
+        <sqlMapGenerator targetPackage="com.rsosor.ec.mapper" targetProject="ec-mbg\src\main\resources"/>
+        <!-- 生成 .xml 文件 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.rsosor.ec.mapper"
+                             targetProject="ec-mbg\src\main\java"/>
+        <!-- 生成全部表 tableName 設為 % -->
+        <table tableName="%">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>

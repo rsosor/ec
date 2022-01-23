@@ -113,11 +113,13 @@
                 <version>${pagehelper-starter.version}</version>
             </dependency>
             <!--start.spring.io 裡面的-->
+            <!--
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>2.2.1</version>
             </dependency>
+            -->
             <!--MyBatis 分頁插件-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -239,7 +241,7 @@
                     </executions>
                     2
                     <configuration>
-                        <imageName>mall/${project.artifactId}:${project.version}</imageName>
+                        <imageName>ec/${project.artifactId}:${project.version}</imageName>
                         <dockerHost>${docker.host}</dockerHost>
                         <baseImage>java:17</baseImage>
                         <entryPoint>["java", "-jar", "-Dspring.profiles.active=prod", "/${project.build.finalName}.jar"]

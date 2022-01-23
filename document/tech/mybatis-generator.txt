@@ -1,0 +1,1 @@
+MyBatis 的程式生成器，可以根據數據庫生成 model、mapper.xml、mapper 接口、example，通常情況下的單表查詢不用再手寫 mapper。

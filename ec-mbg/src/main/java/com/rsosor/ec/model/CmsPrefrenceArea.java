@@ -4,7 +4,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class CmsPrefrenceArea implements Serializable {
-
     private Long id;
 
     private String name;
@@ -15,7 +14,7 @@ public class CmsPrefrenceArea implements Serializable {
 
     private Integer showStatus;
 
-    @ApiModelProperty(value = "展示圖片")
+    @ApiModelProperty(value = "展示图片")
     private byte[] pic;
 
     private static final long serialVersionUID = 1L;
@@ -76,7 +75,7 @@ public class CmsPrefrenceArea implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", subTitle").append(subTitle);
+        sb.append(", subTitle=").append(subTitle);
         sb.append(", sort=").append(sort);
         sb.append(", showStatus=").append(showStatus);
         sb.append(", pic=").append(pic);

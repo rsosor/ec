@@ -1,11 +1,9 @@
 package com.rsosor.ec.model;
 
 import io.swagger.annotations.ApiModelProperty;
-
 import java.io.Serializable;
 
 public class PmsBrand implements Serializable {
-
     private Long id;
 
     private String name;
@@ -15,21 +13,21 @@ public class PmsBrand implements Serializable {
 
     private Integer sort;
 
-    @ApiModelProperty(value = "是否為品牌製造商：0->不是；1->是")
+    @ApiModelProperty(value = "是否为品牌制造商：0->不是；1->是")
     private Integer factoryStatus;
 
     private Integer showStatus;
 
-    @ApiModelProperty(value = "產品數量")
+    @ApiModelProperty(value = "产品数量")
     private Integer productCount;
 
-    @ApiModelProperty(value = "產品評論數量")
+    @ApiModelProperty(value = "产品评论数量")
     private Integer productCommentCount;
 
-    @ApiModelProperty(value = "品牌 logo")
+    @ApiModelProperty(value = "品牌logo")
     private String logo;
 
-    @ApiModelProperty(value = "專區大圖")
+    @ApiModelProperty(value = "专区大图")
     private String bigPic;
 
     @ApiModelProperty(value = "品牌故事")
@@ -138,10 +136,12 @@ public class PmsBrand implements Serializable {
         sb.append(", factoryStatus=").append(factoryStatus);
         sb.append(", showStatus=").append(showStatus);
         sb.append(", productCount=").append(productCount);
+        sb.append(", productCommentCount=").append(productCommentCount);
         sb.append(", logo=").append(logo);
         sb.append(", bigPic=").append(bigPic);
         sb.append(", brandStory=").append(brandStory);
         sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
         return sb.toString();
     }
 }

@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/ec?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Taiwan
+    username: reader
+    password: 123456
+    druid:
+      initial-size: 5 # 連接池初始化大小
+      min-idle: 10 # 最小空閒連接數
+      max-active: 20 # 最大連接數
+      web-stat-filter:
+        exclusions: "*.js, *.gif, *.jpg, *.png, *.css, *.ico,/druid/*" # 不統計這些請求數據
+      stat-view-servlet: # 訪問監控網頁的登錄用戶名和密碼
+        login-username: druid
+        login-password: druid
+  redis:
+    host: redis # Redis 伺服器地址
+    database: 0 # Redis 數據庫索引(預設為 0)
+    port: 6379 # Redis 伺服器連接端口
+    password: # Redis 伺服器連接密碼(默認為空)
+    timeout: 300ms # 連接超時時間(毫秒)
+
+logging:
+  file:
+    path: /var/logs
+  level:
+    root: info
+    com.rsosor.ec: info
+
+logstash:
+  host: logstash

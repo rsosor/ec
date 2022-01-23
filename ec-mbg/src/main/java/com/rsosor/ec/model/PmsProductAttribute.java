@@ -4,38 +4,37 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 public class PmsProductAttribute implements Serializable {
-
     private Long id;
 
     private Long productAttributeCategoryId;
 
     private String name;
 
-    @ApiModelProperty(value = "屬性選擇類型：0->唯一；1->單選；2->多選")
+    @ApiModelProperty(value = "属性选择类型：0->唯一；1->单选；2->多选")
     private Integer selectType;
 
-    @ApiModelProperty(value = "屬性登入方式：0->手工登入；1->從列表中選取")
+    @ApiModelProperty(value = "属性录入方式：0->手工录入；1->从列表中选取")
     private Integer inputType;
 
-    @ApiModelProperty(value = "可選值列表，以逗號隔開")
+    @ApiModelProperty(value = "可选值列表，以逗号隔开")
     private String inputList;
 
-    @ApiModelProperty(value = "排序字段：最高的可以單獨上傳圖片")
+    @ApiModelProperty(value = "排序字段：最高的可以单独上传图片")
     private Integer sort;
 
-    @ApiModelProperty(value = "分類篩選樣式：0->普通；1->顏色")
+    @ApiModelProperty(value = "分类筛选样式：1->普通；1->颜色")
     private Integer filterType;
 
-    @ApiModelProperty(value = "檢索類型；0->不需要進行檢索；1->關鍵字檢索；2->範圍檢索")
+    @ApiModelProperty(value = "检索类型；0->不需要进行检索；1->关键字检索；2->范围检索")
     private Integer searchType;
 
-    @ApiModelProperty(value = "相同屬性產品是否關聯；0->不關聯；2->關聯")
+    @ApiModelProperty(value = "相同属性产品是否关联；0->不关联；1->关联")
     private Integer relatedStatus;
 
-    @ApiModelProperty(value = "是否支持手動新增；0->不支持；1->支持")
+    @ApiModelProperty(value = "是否支持手动新增；0->不支持；1->支持")
     private Integer handAddStatus;
 
-    @ApiModelProperty(value = "屬性的類型；0->規格；1->參數")
+    @ApiModelProperty(value = "属性的类型；0->规格；1->参数")
     private Integer type;
 
     private static final long serialVersionUID = 1L;

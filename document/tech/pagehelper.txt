@@ -1,0 +1,5 @@
+PageHelper.startPage(pageNum, pageSize);
+// 之後進行查詢操作將自動進行分頁
+List<PmsBrand> brandList = brandMapper.selectByExample(new PmsBrandExample());
+// 通過構造 PageInfo 對象獲取分頁訊息，如當前頁碼、總頁數、總條數
+PageInfo<PmsBrand> pageInfo = new PageInfo<PmsBrand>(list);

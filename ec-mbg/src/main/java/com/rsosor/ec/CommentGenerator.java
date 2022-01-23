@@ -4,6 +4,7 @@ import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.CompilationUnit;
 import org.mybatis.generator.api.dom.java.Field;
+import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.internal.DefaultCommentGenerator;
 import org.mybatis.generator.internal.util.StringUtility;
 
@@ -59,11 +60,28 @@ public class CommentGenerator extends DefaultCommentGenerator {
     /**
      * 給 model 的字段添加注釋
      *
-     * @param compilationUnit
+     * @param field
+     * @param remarks
      */
+    private void addFieldJavaDoc(Field field, String remarks) {
+        // 文檔注釋開始
+        field.addJavaDocLine("/**");
+        // 獲取數據庫字段的備註訊息
+        String[] remarkLines = remarks.split(System.getProperty("line.separator"));
+        for (String remarkLine: remarkLines) {
+            field.addJavaDocLine(" * " + remarkLine);
+        }
+        addJavadocTag(field, false);
+        field.addJavaDocLine(" */");
+    }
 
     @Override
     public void addJavaFileComment(CompilationUnit compilationUnit) {
         super.addJavaFileComment(compilationUnit);
+        // 只在 model 中添加 swagger 註解類的導入
+        if (!compilationUnit.getType().getFullyQualifiedName().contains(MAPPER_SUFFIX)
+                && !compilationUnit.getType().getFullyQualifiedName().contains(EXAMPLE_SUFFIX)) {
+            compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_PROPERTY_FULL_CLASS_NAME));
+        }
     }
 }

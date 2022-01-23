@@ -2,11 +2,10 @@ package com.rsosor.ec.mapper;
 
 import com.rsosor.ec.model.PmsBrand;
 import com.rsosor.ec.model.PmsBrandExample;
-import org.apache.ibatis.annotations.Param;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface PmsBrandMapper {
-
     long countByExample(PmsBrandExample example);
 
     int deleteByExample(PmsBrandExample example);

@@ -2,12 +2,10 @@ package com.rsosor.ec.mapper;
 
 import com.rsosor.ec.model.CmsPrefrenceArea;
 import com.rsosor.ec.model.CmsPrefrenceAreaExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
 public interface CmsPrefrenceAreaMapper {
-
     long countByExample(CmsPrefrenceAreaExample example);
 
     int deleteByExample(CmsPrefrenceAreaExample example);

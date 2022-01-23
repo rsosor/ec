@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CmsPrefrenceAreaExample {
-
     protected String orderByClause;
 
     protected boolean distinct;
@@ -15,20 +14,20 @@ public class CmsPrefrenceAreaExample {
         oredCriteria = new ArrayList<>();
     }
 
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
-    public boolean isDistinct() {
-        return distinct;
+    public String getOrderByClause() {
+        return orderByClause;
     }
 
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
+    }
+
+    public boolean isDistinct() {
+        return distinct;
     }
 
     public List<Criteria> getOredCriteria() {
@@ -63,6 +62,7 @@ public class CmsPrefrenceAreaExample {
         orderByClause = null;
         distinct = false;
     }
+
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
 
@@ -214,23 +214,23 @@ public class CmsPrefrenceAreaExample {
             return (Criteria) this;
         }
 
-        public Criteria andNameIn(String value) {
-            addCriterion("name in", value, "name");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotIn(String value) {
-            addCriterion("name not in", value, "name");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNameBetween(String value) {
-            addCriterion("name between", value, "name");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNameNotBetween(String value) {
-            addCriterion("name not between", value, "name");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
 
@@ -250,12 +250,12 @@ public class CmsPrefrenceAreaExample {
         }
 
         public Criteria andSubTitleNotEqualTo(String value) {
-            addCriterion("sub_title <>", value, "sub_Title");
+            addCriterion("sub_title <>", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTiTleGreaterThan(String value) {
-            addCriterion("sub_title >", value, "sub_Title");
+        public Criteria andSubTitleGreaterThan(String value) {
+            addCriterion("sub_title >", value, "subTitle");
             return (Criteria) this;
         }
 
