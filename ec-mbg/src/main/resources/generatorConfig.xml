@@ -29,11 +29,11 @@
             <!-- 解決 mysql 驅動升級到 8.0 後不生成指定數據庫程式的問題 -->
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
-        <!-- 生成實體類 entity(JPA)、model、pojo 包命名習慣 -->
+        <!-- 生成實體類 entity(JPA)、model、pojo -> 包命名習慣 -->
         <javaModelGenerator targetPackage="com.rsosor.ec.model" targetProject="ec-mbg\src\main\java"/>
-        <!-- 生成 mapper(proxy) | dao(原始) 實現方式 -->
+        <!-- 生成 .xml 映射文件 -->
         <sqlMapGenerator targetPackage="com.rsosor.ec.mapper" targetProject="ec-mbg\src\main\resources"/>
-        <!-- 生成 .xml 文件 -->
+        <!-- 生成 mapper(proxy) | dao(原始) -> 實現方式 -->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.rsosor.ec.mapper"
                              targetProject="ec-mbg\src\main\java"/>
         <!-- 生成全部表 tableName 設為 % -->
