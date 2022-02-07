@@ -8,7 +8,6 @@ import com.rsosor.ec.service.PmsProductAttributeCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +18,7 @@ import java.util.List;
  * @author RsosoR
  * @date 2022/1/17
  */
-@Controller
+@RestController
 @Api(tags = "PmsProductAttributeCategoryController", description = "商品屬性分類管理")
 @RequestMapping("/productAttribute/category")
 public class PmsProductAttributeCategoryController {

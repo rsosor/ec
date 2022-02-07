@@ -23,7 +23,6 @@ public class PmsProductAttributeCategoryServiceImpl implements PmsProductAttribu
 
     @Autowired
     private PmsProductAttributeCategoryMapper productAttributeCategoryMapper;
-
     @Autowired
     private PmsProductAttributeCategoryDao productAttributeCategoryDao;
 

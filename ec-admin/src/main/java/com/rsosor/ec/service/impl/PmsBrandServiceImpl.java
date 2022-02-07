@@ -27,7 +27,6 @@ public class PmsBrandServiceImpl implements PmsBrandService {
 
     @Autowired
     private PmsBrandMapper brandMapper;
-
     @Autowired
     private PmsProductMapper productMapper;
 

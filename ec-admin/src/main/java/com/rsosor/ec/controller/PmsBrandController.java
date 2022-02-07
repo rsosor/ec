@@ -8,7 +8,6 @@ import com.rsosor.ec.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +19,7 @@ import java.util.List;
  * @author RsosoR
  * @date 2022/1/16
  */
-@Controller
+@RestController
 @Api(tags = "PmsBrandController", description = "商品品牌管理")
 @RequestMapping("/brand")
 public class PmsBrandController {
@@ -29,7 +28,7 @@ public class PmsBrandController {
     private PmsBrandService brandService;
 
     @ApiOperation(value = "獲取全部品牌列表")
-    @GetMapping("/listAll")
+    @GetMapping(value = "/listAll")
     public CommonResult<List<PmsBrand>> getList() {
         return CommonResult.success(brandService.listAllBrand());
     }
@@ -48,7 +47,7 @@ public class PmsBrandController {
     }
 
     @ApiOperation(value = "更新品牌")
-    @PostMapping("/update/{id}")
+    @PostMapping(value = "/update/{id}")
     public CommonResult update(@PathVariable("id") Long id,
                                @Validated @RequestBody PmsBrandParam pmsBrandParam) {
         CommonResult commonResult;
