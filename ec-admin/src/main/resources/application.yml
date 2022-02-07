@@ -7,6 +7,10 @@ spring:
     multipart:
       enabled: true # 開啟文件上傳
       max-file-size: 10MB # 限制文件上傳大小為 10 MB
+# Spring Boot 預設日期格式: yyyy/mm/dd
+# 通過日期轉換解決請求失敗
+#  mvc:
+#    date-format:
 
 mybatis:
   mapper-locations:
