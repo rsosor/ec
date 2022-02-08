@@ -2,6 +2,8 @@ package com.rsosor.ec.controller;
 
 import com.rsosor.ec.common.api.CommonPage;
 import com.rsosor.ec.common.api.CommonResult;
+import com.rsosor.ec.dto.PmsProductAttributeParam;
+import com.rsosor.ec.dto.ProductAttrInfo;
 import com.rsosor.ec.model.PmsProductAttribute;
 import com.rsosor.ec.service.PmsProductAttributeService;
 import io.swagger.annotations.Api;
@@ -39,4 +41,50 @@ public class PmsProductAttributeController {
         return CommonResult.success(CommonPage.restPage(productAttributeList));
     }
 
+    @ApiOperation("添加商品屬性訊息")
+    @PostMapping(value = "/create")
+    public CommonResult create(@RequestBody PmsProductAttributeParam productAttributeParam) {
+        int count = productAttributeService.create(productAttributeParam);
+        if (count > 0) {
+            return CommonResult.success(count);
+        } else {
+            return CommonResult.failed();
+        }
+    }
+
+    @ApiOperation("修改商品屬性訊息")
+    @PostMapping(value = "/update/{id}")
+    public CommonResult update(@PathVariable Long id, @RequestBody PmsProductAttributeParam productAttributeParam) {
+        int count = productAttributeService.update(id, productAttributeParam);
+        if (count > 0) {
+            return CommonResult.success(count);
+        } else {
+            return CommonResult.failed();
+        }
+    }
+
+    @ApiOperation("查詢單個商品屬性")
+    @GetMapping(value = "/{id}")
+    public CommonResult<PmsProductAttribute> getItem(@PathVariable Long id) {
+        PmsProductAttribute productAttribute = productAttributeService.getItem(id);
+        return CommonResult.success(productAttribute);
+    }
+
+    @ApiOperation("批量刪除商品屬性")
+    @PostMapping(value = "/delete")
+    public CommonResult delete(@RequestParam("ids") List<Long> ids) {
+        int count = productAttributeService.delete(ids);
+        if (count > 0) {
+            return CommonResult.success(count);
+        } else {
+            return CommonResult.failed();
+        }
+    }
+
+    @ApiOperation("根據商品分類的 id 獲取商品屬性及屬性分類")
+    @GetMapping(value = "/attrInfo/{productCategoryId}")
+    public CommonResult<List<ProductAttrInfo>> getAttrInfo(@PathVariable Long productCategoryId) {
+        List<ProductAttrInfo> productAttrInfoList = productAttributeService.getProductAttrInfo(productCategoryId);
+        return CommonResult.success(productAttrInfoList);
+    }
 }
