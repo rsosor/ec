@@ -17,7 +17,6 @@ public interface PmsProductAttributeService {
 
     /**
      * 根據分類分頁獲取商品屬性
-     *
      * @param cid 分類id
      * @param type 0->規格；1->參數
      * @param pageSize
@@ -28,7 +27,6 @@ public interface PmsProductAttributeService {
 
     /**
      * 添加商品屬性
-     *
      * @param pmsProductAttributeParam
      * @return
      */
@@ -37,7 +35,6 @@ public interface PmsProductAttributeService {
 
     /**
      * 修改商品屬性
-     *
      * @param id
      * @param productAttributeParam
      * @return
@@ -46,7 +43,6 @@ public interface PmsProductAttributeService {
 
     /**
      * 獲取單個商品屬性訊息
-     *
      * @param id
      * @return
      */
@@ -54,7 +50,6 @@ public interface PmsProductAttributeService {
 
     /**
      * 批量刪除商品屬性
-     *
      * @param ids
      * @return
      */
@@ -63,7 +58,6 @@ public interface PmsProductAttributeService {
 
     /**
      * 獲取商品分類對應屬性列表
-     *
      * @param productCategoryId
      * @return
      */

@@ -17,7 +17,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 創建商品分類
-     *
      * @param pmsProductCategoryParam
      * @return
      */
@@ -26,7 +25,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 修改商品分類
-     *
      * @param id
      * @param pmsProductCategoryParam
      * @return
@@ -36,7 +34,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 分頁獲取商品分類
-     *
      * @param parentId
      * @param pageSize
      * @param pageNum
@@ -46,7 +43,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 刪除商品分類
-     *
      * @param id
      * @return
      */
@@ -54,7 +50,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 根據 ID 獲取商品分類
-     *
      * @param id
      * @return
      */
@@ -62,7 +57,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 批量修改導航狀態
-     *
      * @param ids
      * @param navStatus
      * @return
@@ -71,7 +65,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 批量修改顯示狀態
-     *
      * @param ids
      * @param showStatus
      * @return
@@ -80,7 +73,6 @@ public interface PmsProductCategoryService {
 
     /**
      * 以層級形式獲取商品分類
-     *
      * @return
      */
     List<PmsProductCategoryWithChildrenItem> listWithChildren();

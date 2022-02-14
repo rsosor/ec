@@ -54,6 +54,12 @@ public class PmsProductCategoryServiceImpl implements PmsProductCategoryService 
         return count;
     }
 
+    /**
+     * 批量插入商品分類與篩選屬性關係表
+     *
+     * @param productCategoryId 商品分類id
+     * @param productAttributeIdList 相關商品篩選屬性id集合
+     */
     private void insertRelationList(Long productCategoryId, List<Long> productAttributeIdList) {
         List<PmsProductCategoryAttributeRelation> relationList = new ArrayList<>();
         for (Long productAttrId : productAttributeIdList) {
