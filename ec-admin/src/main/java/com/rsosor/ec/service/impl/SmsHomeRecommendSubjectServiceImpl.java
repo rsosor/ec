@@ -63,7 +63,7 @@ public class SmsHomeRecommendSubjectServiceImpl implements SmsHomeRecommendSubje
         SmsHomeRecommendSubjectExample example = new SmsHomeRecommendSubjectExample();
         SmsHomeRecommendSubjectExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(subjectName)) {
-            criteria.andSubjectNameLike("%" + subjectName "%");
+            criteria.andSubjectNameLike("%" + subjectName + "%");
         }
         if (recommendStatus != null) {
             criteria.andRecommendStatusEqualTo(recommendStatus);
