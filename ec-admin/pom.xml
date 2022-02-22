@@ -29,9 +29,10 @@
             <groupId>com.rsosor</groupId>
             <artifactId>ec-security</artifactId>
         </dependency>
-
-        <!--阿里雲 OSS 找尋替代此方案-->
-
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
