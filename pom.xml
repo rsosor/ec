@@ -46,9 +46,7 @@
         <mysql-connector.version>8.0.27</mysql-connector.version>
         <spring-data-commons.version>2.3.0.RELEASE</spring-data-commons.version>
         <jjwt.version>0.9.0</jjwt.version>
-        <!-- 找尋替代此方案
-        <aliyun-oss.version></aliyun-oss.version>
-        -->
+        <aliyun-oss.version>2.5.0</aliyun-oss.version>
         <logstash-logback.version>5.3</logstash-logback.version>
         <minio.version>7.1.0</minio.version>
         <ec-common.version>0.0.1-SNAPSHOT</ec-common.version>
@@ -192,7 +190,12 @@
                 <version>${jjwt.version}</version>
             </dependency>
 
-            <!--阿里雲 OSS，找尋替代此方案-->
+            <!-- 阿里雲 OSS -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-oss.version}</version>
+            </dependency>
 
             <!--集成 logstash-->
             <dependency>
