@@ -1,0 +1,29 @@
+sever:
+  port: 8082
+
+spring:
+  application:
+    name: ec-demo
+  datasource:
+    url: jdbc:mysql://localhost:3306/ec?useUnicode=true&characterEncoding=utf-8&serverTimezonAsia/Shanghai
+    username: root
+    password: root
+  thymeleaf:
+    mode: HTML5
+    encoding: utf-8
+    servlet:
+      contentType: text/html
+    cache: false # 開發時關閉緩存，不然沒法看到實時頁面
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+
+logging:
+  level:
+    root: info
+    com.rsosor.ec: debug
+
+host:
+  ec:
+    admin: http://localhost:8080
