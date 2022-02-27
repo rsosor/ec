@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 
 ### MyBatis generator files ###
-src/main/resources/com/rsosor/ec/mapper
+# src/main/resources/com/rsosor/ec/mapper
 
 ### STS ###
 .apt_generated
