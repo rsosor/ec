@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ec-search
+  profiles:
+    active: dev # 預設為開發環境
+
+server:
+  port: 8081
+
+mybatis:
+  mapper-locations:
+    - classpath:dao/*.xml
+    - classpath*:com/**/mapper/*.xml
