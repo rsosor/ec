@@ -246,7 +246,7 @@
                     <configuration>
                         <imageName>ec/${project.artifactId}:${project.version}</imageName>
                         <dockerHost>${docker.host}</dockerHost>
-                        <baseImage>java:17</baseImage>
+                        <baseImage>java:11</baseImage>
                         <entryPoint>["java", "-jar", "-Dspring.profiles.active=prod", "/${project.build.finalName}.jar"]
                         </entryPoint>
                         <resources>

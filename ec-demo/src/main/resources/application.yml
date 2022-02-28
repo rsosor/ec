@@ -9,7 +9,7 @@ spring:
     username: root
     password: root
   thymeleaf:
-    mode: HTML5
+    mode: HTML
     encoding: utf-8
     servlet:
       contentType: text/html

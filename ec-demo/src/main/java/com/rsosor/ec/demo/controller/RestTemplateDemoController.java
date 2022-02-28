@@ -33,7 +33,7 @@ public class RestTemplateDemoController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${host.mall.admin}")
+    @Value("${host.ec.admin}")
     private String HOST_MALL_ADMIN;
 
     @ApiOperation("getForEntity url")
