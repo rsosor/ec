@@ -8,6 +8,7 @@ import com.rsosor.ec.model.SmsFlashPromotionProductRelation;
 import com.rsosor.ec.model.SmsFlashPromotionProductRelationExample;
 import com.rsosor.ec.service.SmsFlashPromotionProductRelationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * @author RsosoR
  * @date 2022/2/21
  */
+@Service
 public class SmsFlashPromotionProductRelationServiceImpl implements SmsFlashPromotionProductRelationService {
 
     @Autowired

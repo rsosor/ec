@@ -21,7 +21,7 @@
         </filter>
         <encoder>
             <!-- 設置為預設的文件日誌格式 -->
-            <pattern>#{FILE_LOG_PATTERN</pattern>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
@@ -122,7 +122,7 @@
     
     <!-- 業務日誌輸出到 LogStash -->
     <appender name="LOG_STASH_BUSINESS" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destiantion>${LOG_STASH_HOST}:4562</destiantion>
+        <destination>${LOG_STASH_HOST}:4562</destination>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
