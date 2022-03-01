@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan({"com.rsosor.ec.mapper, com.rsosor.ec.dao"})
+@MapperScan({"com.rsosor.ec.mapper", "com.rsosor.ec.dao"})
 public class MyBatisConfig {
 }

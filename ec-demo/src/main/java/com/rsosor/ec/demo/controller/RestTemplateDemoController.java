@@ -34,12 +34,12 @@ public class RestTemplateDemoController {
     private RestTemplate restTemplate;
 
     @Value("${host.ec.admin}")
-    private String HOST_MALL_ADMIN;
+    private String HOST_EC_ADMIN;
 
     @ApiOperation("getForEntity url")
     @GetMapping(value = "/get/{id}")
     public Object getForEntity(@PathVariable Long id) {
-        String url = HOST_MALL_ADMIN + "/brand/{id}";
+        String url = HOST_EC_ADMIN + "/brand/{id}";
         ResponseEntity<CommonResult> responseEntity = restTemplate.getForEntity(url, CommonResult.class, id);
         return responseEntity.getBody();
     }
@@ -47,7 +47,7 @@ public class RestTemplateDemoController {
     @ApiOperation("getForEntity params")
     @GetMapping(value = "/get2/{id}")
     public Object getForEntity2(@PathVariable Long id) {
-        String url = HOST_MALL_ADMIN + "/brand/{id}";
+        String url = HOST_EC_ADMIN + "/brand/{id}";
         Map<String, String> params = new HashMap<>();
         params.put("id", String.valueOf(id));
         ResponseEntity<CommonResult> responseEntity = restTemplate.getForEntity(url, CommonResult.class, params);
@@ -57,7 +57,7 @@ public class RestTemplateDemoController {
     @ApiOperation("getForEntity Uri")
     @GetMapping(value = "/get3/{id}")
     public Object getForEntity3(@PathVariable Long id) {
-        String url = HOST_MALL_ADMIN + "/brand/{id}";
+        String url = HOST_EC_ADMIN + "/brand/{id}";
         UriComponents uriComponents = UriComponentsBuilder.fromUriString(url).build().expand(id).encode();
         ResponseEntity<CommonResult> responseEntity = restTemplate.getForEntity(uriComponents.toUri(), CommonResult.class);
         return responseEntity.getBody();
@@ -66,7 +66,7 @@ public class RestTemplateDemoController {
     @ApiOperation("getForEntity url")
     @GetMapping(value = "/get4/{id}")
     public Object getForObject(@PathVariable Long id) {
-        String url = HOST_MALL_ADMIN + "/brand/{id}";
+        String url = HOST_EC_ADMIN + "/brand/{id}";
         CommonResult commonResult = restTemplate.getForObject(url, CommonResult.class, id);
         return commonResult;
     }
@@ -74,7 +74,7 @@ public class RestTemplateDemoController {
     @ApiOperation("postForEntity jsonBody")
     @PostMapping(value = "/post")
     public Object postForEntity(@RequestBody PmsBrand brand) {
-        String url = HOST_MALL_ADMIN + "/brand/create";
+        String url = HOST_EC_ADMIN + "/brand/create";
         ResponseEntity<CommonResult> responseEntity = restTemplate.postForEntity(url, brand, CommonResult.class);
         return responseEntity.getBody();
     }
@@ -82,7 +82,7 @@ public class RestTemplateDemoController {
     @ApiOperation("postForEntity jsonBody")
     @PostMapping(value = "/post2")
     public Object postForObject(@RequestBody PmsBrand brand) {
-        String url = HOST_MALL_ADMIN + "/brand/create";
+        String url = HOST_EC_ADMIN + "/brand/create";
         CommonResult commonResult = restTemplate.postForObject(url, brand, CommonResult.class);
         return commonResult;
     }
@@ -90,7 +90,7 @@ public class RestTemplateDemoController {
     @ApiOperation("postForEntity form")
     @PostMapping(value = "/post3")
     public Object postForEntity3(@RequestParam String name) {
-        String url = HOST_MALL_ADMIN + "/productAttribute/category/create";
+        String url = HOST_EC_ADMIN + "/productAttribute/category/create";
         // 設置頭訊息
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);

@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
+
     <modules>
         <module>ec-admin</module>
         <module>ec-portal</module>
@@ -12,6 +12,7 @@
         <module>ec-common</module>
         <module>ec-search</module>
     </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -22,6 +23,7 @@
     <groupId>com.rsosor</groupId>
     <artifactId>ec</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>ec</name>
     <description>Demo project for Spring Boot</description>
 

@@ -19,6 +19,7 @@ import java.util.List;
  */
 @RestController
 @Api(tags = "SmsFlashPromotionController", description = "限時購活動管理")
+@RequestMapping("/flash")
 public class SmsFlashPromotionController {
 
     @Autowired
